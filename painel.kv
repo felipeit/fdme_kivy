@@ -1,0 +1,39 @@
+<Painel>:
+    BoxLayout:
+        Label:
+            text: "Painel do Usuário"
+            font_size: 32
+            pos_hint: {'center_y': .97}
+
+    
+    FloatLayout:
+        Label:
+            text: "Ativar:"
+            font_size: 32
+            pos_hint: {'center_x': .2, 'center_y': .89}
+    
+    BoxLayout:
+        Switch:
+            pos_hint: {'center_x': .1, 'center_y': .89}
+            on_active: root.callback(*args)
+    FloatLayout:
+        Label:
+            text: "Nome:"
+            font_size: 32
+            pos_hint: {'center_x': .2, 'center_y': .70}
+        Label:
+            text: "Status:"
+            font_size: 32
+            pos_hint: {'center_x': .2, 'center_y': .60}
+    BoxLayout:
+        Button:
+            text: 'Fechar'
+            font_size: 24
+            size_hint: (.2, .1)
+            pos_hint: {'center_x': .5, 'center_y': .1}
+        Button:
+            text: "Standalone"
+            font_size: 24
+            size_hint: (.2, .1)
+            pos_hint: {'center_x': .5, 'center_y': .1}
+            on_press: root.disconnect()

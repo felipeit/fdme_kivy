@@ -1,0 +1,56 @@
+#:include painel.kv
+
+<Login>:
+    BoxLayout
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        Label: 
+            text: app.gps_location
+            text: 'FDME'
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Login'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: login
+                multiline:False
+                font_size: 28
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 28
+        
+        BoxLayout:
+            Button:
+                text: 'Log in'
+                font_size: 24
+                size_hint: (.2, .7)
+                pos_hint: {'center_x': .5, 'center_y': .1}
+                on_press: root.autenticar_login(login.text, password.text)
+                on_press: root.manager.current = 'painel'
+
+            Button:
+                text: 'Register'
+                font_size: 24
+                size_hint: (.2, .7)
+                pos_hint: {'center_x': .5, 'center_y': .1}
