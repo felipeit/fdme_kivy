@@ -1,5 +1,4 @@
 *.pyc
-address/
 .buildozer/
 bin/
 my_log.txt
